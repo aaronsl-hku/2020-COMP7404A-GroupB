@@ -33,7 +33,7 @@ Read image and dictionary of model, return face aligned image
 faceAlignmentFromFile: image location, dict -> cv2 image (type numpy.ndarray))
 Read location string of image and dictionary of model, return face aligned image
 """
-def faceAlignmentFromImage(img, f='Image',models={}):
+def faceAlignmentFromImage(img, f='Image',models={},rect=0,points=2):
   if 'detector' not in models:
     models['detector'] = dlib.get_frontal_face_detector()
   if 'predictor' not in models:
@@ -60,12 +60,14 @@ def faceAlignmentFromImage(img, f='Image',models={}):
       # We then convert dlib's rectangle to a OpenCV-style bounding box 
       # [i.e., (x, y, w, h)], then can draw the face bounding box 
       (x, y, w, h) = face_utils.rect_to_bb(d) 
-      cv2.rectangle(img, (x, y), (x + w, y + h), (255, 255, 0), 1) 
+      if rect:
+        cv2.rectangle(img, (x, y), (x + w, y + h), (255, 255, 0), rect) 
 
       # We then loop over the (x, y)-coordinates for the facial landmarks  
       # and draw them on the image 
-      for (x, y) in shape: 
-          cv2.circle(img, (x, y), 2, (0, 0, 255), -1) 
+      if points:
+        for (x, y) in shape: 
+            cv2.circle(img, (x, y), points, (0, 0, 255), -1) 
       # Draw the face landmarks on the screen.
       # win.add_overlay(shape)
   try:
@@ -75,7 +77,7 @@ def faceAlignmentFromImage(img, f='Image',models={}):
   return img
 
 
-def faceAlignmentFromFile(f='test.jpg',models={}):
+def faceAlignmentFromFile(f='test.jpg',models={},rect=0,points=2):
   img = cv2.imread(f)
-  return faceAlignmentFromImage(img,f,models)
+  return faceAlignmentFromImage(img,f,models,rect,points)
 
