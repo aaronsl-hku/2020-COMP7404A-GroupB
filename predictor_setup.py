@@ -14,9 +14,13 @@ Original file is located at
 
 import urllib.request
 import bz2,shutil
+import os
 
 urllib.request.urlretrieve("https://github.com/davisking/dlib-models/raw/master/shape_predictor_68_face_landmarks.dat.bz2", filename="shape_predictor_68_face_landmarks.dat.bz2")
 with bz2.BZ2File("shape_predictor_68_face_landmarks.dat.bz2") as fr, open("shape_predictor_68_face_landmarks.dat","wb") as fw:
     shutil.copyfileobj(fr,fw)
-
+if os.path.exists("shape_predictor_68_face_landmarks.dat.bz2"):
+  os.remove("shape_predictor_68_face_landmarks.dat.bz2")
+else:
+  print("The file does not exist")
 
