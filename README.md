@@ -14,7 +14,7 @@ This project is a presentation of:<br/>
 >Proc. CVPR 2014<br/>
 >https://www.cv-foundation.org/openaccess/content_cvpr_2014/papers/Kazemi_One_Millisecond_Face_2014_CVPR_paper.pdf
 
-Most of the images used, either come the original paper or Flickr-Faces-HQ (FFHQ) dataset, originally created for:<br/>
+Most of the images used, either come the original paper or [Flickr-Faces-HQ (FFHQ)](https://github.com/NVlabs/ffhq-dataset) dataset, originally created for:<br/>
 >A Style-Based Generator Architecture for Generative Adversarial Networks<br/>
 >Tero Karras (NVIDIA), Samuli Laine (NVIDIA), Timo Aila (NVIDIA)<br/>
 >https://arxiv.org/abs/1812.04948<br/>
