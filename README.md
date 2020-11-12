@@ -2,7 +2,7 @@
 
 ## Objective
 This is a demonstration for our fellow students to experiment on face alignment.<br/>
-Explore with our [showcase](Face_Alignment.ipynb) in Google Colab - there are only 3 simple steps explained in the notebook!<br/>
+Explore with our **[showcase](Face_Alignment.ipynb)** in Google Colab - there are only 3 simple steps explained in the notebook!<br/>
 Have fun - and don't hesitate to ask us question in Q&A!
 
 ## References
